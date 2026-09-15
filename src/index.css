@@ -12,7 +12,7 @@
   --green: #34D399;
   --green-light: #6EE7B7;
   --ink: #E2E8F0;
-  --muted: #94A3B8;
+  --muted: #FDFFFB;
   --line: #1E293B;
   --white: #0B1120;
   --grad: linear-gradient(114deg, #D8F000 0%, #B4D600 55%, #8FB000 120%);
@@ -275,7 +275,7 @@ body.menu-open { overflow: hidden; }
 .pn-input::placeholder { color: #64748B; }
 .cp-flag { display: inline-block; width: 20px; height: 15px; border-radius: 2px; object-fit: contain; flex: 0 0 auto; }
 .cp-dial { font-weight: 600; font-size: 14.5px; color: #B9C4D6; }
-.cp-chev { color: #94A3B8; transition: transform .15s ease; }
+.cp-chev { color: #FDFFFB; transition: transform .15s ease; }
 .pn-country[aria-expanded="true"] .cp-chev { transform: rotate(180deg); }
 
 .country-picker-drop {
