@@ -15,32 +15,32 @@ const pillars = [
   {
     icon: 'bot',
     title: 'AI-Powered Analysis',
-    text: "Ai Nobiloption's AI monitors the markets around the clock and turns what it sees into clear, ready-to-use signals, so a promising move rarely slips past.",
+    text: "Ai Nobiloption's AI keeps watch over the markets day and night, turning what it observes into clear, ready-to-use signals so a promising opportunity rarely goes unnoticed.",
   },
   {
     icon: 'shield',
     title: 'Bank-Grade Security',
-    text: 'Funds and personal data are shielded by strong encryption and layered account protection, from the moment you register through to your very first withdrawal.',
+    text: 'Your funds and personal data are protected by strong encryption and layered account safeguards, from the moment you sign up all the way to your first withdrawal.',
   },
   {
     icon: 'user',
     title: 'Support, Your Way',
-    text: 'A real support team is available around the clock to guide you, from your first login to your hundredth trade.',
+    text: 'A real support team is on hand around the clock to guide you, from your first login through to your hundredth trade.',
   },
 ]
 
 const mission = [
   {
     title: 'Accessible',
-    text: "Trading expertise should never be a barrier to entry. Every screen on Ai Nobiloption is designed to feel clear and welcoming, so a first-time trader can begin with confidence, whatever their background.",
+    text: "Trading know-how should never be a barrier to getting started. Every screen on Ai Nobiloption is designed to feel clear and welcoming, so a first-time trader can begin with confidence, whatever their background.",
   },
   {
     title: 'Transparent',
-    text: 'What you see is what you get. Fees, trade details, and platform rules are shown plainly up front, so nothing is hidden until after you act.',
+    text: 'What you see is what you get. Fees, trade details and platform rules are laid out plainly up front, so nothing is hidden until after you act.',
   },
   {
     title: 'Innovative',
-    text: 'The platform is refined continuously with the latest AI and algorithmic trading technology, keeping Ai Nobiloption genuinely current rather than standing still.',
+    text: 'The platform is continually refined with the latest AI and algorithmic trading technology, keeping Ai Nobiloption genuinely current rather than standing still.',
   },
   {
     title: 'Responsible',
@@ -52,31 +52,31 @@ const story = [
   {
     step: '01',
     title: 'The Beginning',
-    image: '/about/the-beginning.webp', w: 1200, h: 900,
-    text: 'Ai Nobiloption began with six specialists in fintech and algorithmic trading who shared one goal, to make automated trading as simple and dependable as everyday online banking.',
+    image: '/about/the-beginning.jpg', w: 1200, h: 900,
+    text: 'Ai Nobiloption started with six fintech and algorithmic-trading specialists who shared one goal: to make automated trading as straightforward and dependable as everyday online banking.',
   },
   {
     step: '02',
     title: 'First Launch',
-    image: '/about/first-launch.webp', w: 1200, h: 900,
-    text: 'The platform launched with 12 cryptocurrencies, and more than 10,000 traders joined in the very first month. A clean, uncluttered interface paired with hands-free automation was what set it apart from day one.',
+    image: '/about/first-launch.jpg', w: 1200, h: 900,
+    text: 'The platform went live with 12 cryptocurrencies, and more than 10,000 traders joined in the very first month. A clean, uncluttered interface paired with hands-free automation set it apart from day one.',
   },
   {
     step: '03',
     title: 'Growing the Community',
-    image: '/about/growing-the-community.webp', w: 1200, h: 900,
-    text: 'Within its first year, Ai Nobiloption passed 500,000 users. More currencies were added, alongside round-the-clock customer support in several languages.',
+    image: '/about/growing-the-community.jpg', w: 1200, h: 900,
+    text: 'Within its first year, Ai Nobiloption passed 500,000 users. New currencies were added, along with round-the-clock customer support in several languages.',
   },
   {
     step: '04',
     title: 'Reaching New Markets',
-    image: '/about/reaching-new-markets.webp', w: 1200, h: 900,
-    text: 'As demand grew, Ai Nobiloption expanded into many new markets, adding local payment options and switching on two-factor authentication for every account along the way.',
+    image: '/about/reaching-new-markets.jpg', w: 1200, h: 900,
+    text: 'As demand grew, Ai Nobiloption expanded into many new markets, introducing local payment options and enabling two-factor authentication on every account along the way.',
   },
   {
     step: '05',
     title: 'Today',
-    image: '/about/today.webp', w: 1200, h: 900,
+    image: '/about/today.jpg', w: 1200, h: 900,
     text: 'Now serving 4M+ registered users across 65+ currencies, Ai Nobiloption keeps growing every day, with the original mission unchanged: make automated trading accessible to everyone.',
   },
 ]
@@ -197,7 +197,6 @@ export default function About() {
             {story.map((s, i) => (
               <div className={`about-story-row ${i % 2 ? 'reverse' : ''} reveal`} key={s.step}>
                 <div className="about-story-media">
-                  <span className="about-story-fallback" aria-hidden="true">{s.step}</span>
                   <img
                     src={s.image}
                     alt={`${s.title}, Ai Nobiloption`}

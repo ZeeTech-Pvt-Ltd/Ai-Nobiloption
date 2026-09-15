@@ -60,8 +60,8 @@ export default function Contact() {
             We&rsquo;d love to <mark>hear from you</mark>
           </h1>
           <p className="lead">
-            Have a question about Ai Nobiloption, your account, or automated trading? Our team is available around
-            the clock, reach out and we&rsquo;ll get back to you quickly.
+            Questions about Ai Nobiloption, your account, or automated trading? Our team is here around the
+            clock, get in touch and we&rsquo;ll reply quickly.
           </p>
         </div>
       </section>
@@ -138,7 +138,7 @@ export default function Contact() {
       <CtaBanner
         eyebrow="Explore trading opportunities"
         title="Register now and our team will be in touch"
-        text="Open your Ai Nobiloption account in minutes and put automated AI trading to work, with support available 24/7."
+        text="Set up your Ai Nobiloption account in minutes and put automated AI trading to work, with help available 24/7."
         cta="Register Now"
       />
     </>

@@ -45,9 +45,9 @@ export default function FaqPage() {
             Frequently Asked <mark>Questions</mark>
           </h1>
           <p className="lead">
-            Answers to common questions about how Ai Nobiloption works, what to
-            expect from our reporting, and how to get started. If you don't find
-            what you're looking for, reach out via our contact page.
+            Clear answers to the most common questions about how Ai Nobiloption works, what to
+            expect from our reporting, and how to get started. If you can't find what you need
+            here, reach out through our contact page.
           </p>
         </div>
       </section>
