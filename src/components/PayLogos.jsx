@@ -45,7 +45,7 @@ export function GooglePay({ w = 52, h = 20 }) {
 
 export function BankTransfer({ w = 18, h = 18 }) {
   return (
-    <svg width={w} height={h} viewBox="0 0 24 24" fill="none" stroke="#C7D2E0" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <svg width={w} height={h} viewBox="0 0 24 24" fill="none" stroke="#C6C6C0" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
       <path d="M3 21h18M4 21V10m5 11V10m6 11V10m5 11V10M3 10l9-7 9 7M2 10h20" />
     </svg>
   )
