@@ -162,6 +162,7 @@ export default function RegistrationForm() {
         <a href="/terms">Terms of Use</a> of the website.
       </p>
 
+      <div className="pay-label">Accepted payment methods</div>
       <div className="pay-row" aria-label="Accepted payment methods">
         {payMethods.map(({ name, Icon }) => (
           <span className="pay" key={name} title={name}>
