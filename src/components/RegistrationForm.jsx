@@ -1,10 +1,11 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ArrowRight } from './icons.jsx'
 import { Visa, Mastercard, PayPal, GooglePay, BankTransfer } from './PayLogos.jsx'
 import PhoneNumberInput from './PhoneNumberInput.jsx'
 import { countries } from '../data/countries.js'
 import { submitLead } from '../lib/submitLead.js'
 import { navigateTo } from '../lib/navigate.js'
+import { detectCountryCode, phoneExample } from '../lib/geo.js'
 
 // Validation rules, kept identical to the reference site
 const nameRe = /^(?!.*(?:tg|telegram|traffic|bot))[^@\d]{2,20}$/i
@@ -33,6 +34,15 @@ export default function RegistrationForm() {
   const [phone, setPhone] = useState('')
   const dial = countries.find((c) => c[0] === country)?.[2] ?? 61
   const formRef = useRef(null)
+
+  // Auto-select the country from the visitor's IP, falling back to AU.
+  useEffect(() => {
+    let mounted = true
+    detectCountryCode().then((code) => {
+      if (mounted && code && countries.some((c) => c[0] === code)) setCountry(code)
+    })
+    return () => { mounted = false }
+  }, [])
 
   const isValid = (field, value) => {
     const v = value.trim()
@@ -142,7 +152,7 @@ export default function RegistrationForm() {
           }}
           onBlur={handleBlur}
           invalid={errors.phone}
-          placeholder="0412 345 678"
+          placeholder={phoneExample(country)}
           id="phone"
           name="phone"
           autoComplete="tel"

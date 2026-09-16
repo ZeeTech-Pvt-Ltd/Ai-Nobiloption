@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import CtaBanner from './CtaBanner.jsx'
 import PhoneNumberInput from './PhoneNumberInput.jsx'
 import { ArrowRight, Icon } from './icons.jsx'
 import { submitLead } from '../lib/submitLead.js'
 import { navigateTo } from '../lib/navigate.js'
 import { countries } from '../data/countries.js'
+import { detectCountryCode, phoneExample } from '../lib/geo.js'
 
 // Layout and components follow the site's own design system; copy is
 // Ai Nobiloption-branded.
@@ -21,6 +22,15 @@ export default function Contact() {
   const [phone, setPhone] = useState('')
   const [country, setCountry] = useState('AU')
   const dial = countries.find((c) => c[0] === country)?.[2] ?? 61
+
+  // Auto-select the country from the visitor's IP, falling back to AU.
+  useEffect(() => {
+    let mounted = true
+    detectCountryCode().then((code) => {
+      if (mounted && code && countries.some((c) => c[0] === code)) setCountry(code)
+    })
+    return () => { mounted = false }
+  }, [])
 
   const onSubmit = async (e) => {
     e.preventDefault()
@@ -120,7 +130,7 @@ export default function Contact() {
                     onCountryChange={setCountry}
                     value={phone}
                     onValueChange={setPhone}
-                    placeholder="0400 000 000"
+                    placeholder={phoneExample(country)}
                     autoComplete="tel"
                   />
                 </div>
