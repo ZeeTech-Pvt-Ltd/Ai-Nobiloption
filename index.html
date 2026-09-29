@@ -9,14 +9,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="qwhfU6WTaEUZPv4rn30ZOAOd-HsO6f_AGMkgyYNvcuc" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JL95EY65QV"></script>
+    <!-- Google tag (gtag.js). The 170-odd KB tag is fetched once the browser
+         is idle rather than during load, so it never competes with the app
+         bundle for bandwidth or main-thread time on the critical path. The
+         dataLayer queue means the config call below still lands in order. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-JL95EY65QV');
+
+      (function () {
+        var load = function () {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JL95EY65QV';
+          document.head.appendChild(s);
+        };
+        if ('requestIdleCallback' in window) requestIdleCallback(load, { timeout: 3000 });
+        else window.addEventListener('load', load, { once: true });
+      })();
     </script>
 
     <!-- Typography: Space Grotesk (headings) + Inter (body). Loaded

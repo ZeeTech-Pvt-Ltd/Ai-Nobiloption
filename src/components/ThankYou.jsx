@@ -23,26 +23,26 @@ export default function ThankYou() {
         </div>
 
         <div className="ty-next">
-          <h3>What happens next?</h3>
+          <h2>What happens next?</h2>
           <div className="ty-steps">
             <div className="ty-step">
               <span>1</span>
               <div>
-                <h4>We review your application</h4>
+                <h3>We review your application</h3>
                 <p>Our onboarding team checks your registration details.</p>
               </div>
             </div>
             <div className="ty-step">
               <span>2</span>
               <div>
-                <h4>We reach out to you</h4>
+                <h3>We reach out to you</h3>
                 <p>A team member contacts you to confirm your account and next steps.</p>
               </div>
             </div>
             <div className="ty-step">
               <span>3</span>
               <div>
-                <h4>Start trading with AI</h4>
+                <h3>Start trading with AI</h3>
                 <p>Once verified, your account is activated and you can begin automated trading.</p>
               </div>
             </div>

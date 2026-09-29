@@ -1,5 +1,6 @@
 import { Check } from './icons.jsx'
 import { portfolio } from '../data/content.js'
+import { screenshotSrcSet, SCREENSHOT_SIZES } from '../lib/img.js'
 
 export default function Portfolio() {
   const { title, titleMark, titleEnd, lead, checks, image, imageAlt, imageW, imageH } = portfolio
@@ -10,11 +11,14 @@ export default function Portfolio() {
         <div className="exp-visual reveal">
           <img
             src={image}
+            srcSet={screenshotSrcSet(image)}
+            sizes={SCREENSHOT_SIZES}
             alt={imageAlt}
             className="exp-img"
             width={imageW}
             height={imageH}
             loading="lazy"
+            decoding="async"
           />
         </div>
 

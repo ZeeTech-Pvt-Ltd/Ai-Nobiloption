@@ -4,7 +4,10 @@ import { steps, trustStrip } from '../data/content.js'
 // `asPage` is set when this section renders as the full /how-it-works page,
 // so its heading becomes the page's single H1 (styling stays identical).
 export default function HowItWorks({ asPage = false }) {
+  // As the full page the section heading is the page's h1, so the step titles
+  // step down to h2; as an in-page section they sit under an h2 as h3.
   const Heading = asPage ? 'h1' : 'h2'
+  const StepHeading = asPage ? 'h2' : 'h3'
   return (
     <section className="section how" id="how">
       <div className="container">
@@ -24,7 +27,7 @@ export default function HowItWorks({ asPage = false }) {
               <div className={`step-ico ${step.green ? 'green' : ''}`}>
                 <Icon name={step.icon} />
               </div>
-              <h3>{step.title}</h3>
+              <StepHeading>{step.title}</StepHeading>
               <p>{step.text}</p>
               <a className="btn-link" href="/" data-scroll="#register">
                 {step.cta} <ArrowRight size={16} />

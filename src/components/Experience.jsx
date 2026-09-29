@@ -1,4 +1,5 @@
 import { experience } from '../data/content.js'
+import { screenshotSrcSet, SCREENSHOT_SIZES } from '../lib/img.js'
 
 export default function Experience() {
   const { titleA, titleMark, lead, rows } = experience
@@ -31,11 +32,14 @@ export default function Experience() {
               {row.image ? (
                 <img
                   src={row.image}
+                  srcSet={screenshotSrcSet(row.image)}
+                  sizes={SCREENSHOT_SIZES}
                   alt={row.imageAlt || row.title}
                   className="exp-img"
                   width={row.imageW || 1000}
                   height={row.imageH || 800}
                   loading="lazy"
+                  decoding="async"
                 />
               ) : (
                 <>

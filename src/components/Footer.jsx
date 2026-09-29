@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4>Company</h4>
+            <h2>Company</h2>
             <ul>
               {footer.company.map((l) => (
                 <li key={l.label}><a href={l.href} data-scroll={l.scroll || undefined}>{l.label}</a></li>
@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4>Legal</h4>
+            <h2>Legal</h2>
             <ul>
               {footer.legal.map((l) => (
                 <li key={l.label}><a href={l.href} data-scroll={l.scroll || undefined}>{l.label}</a></li>
