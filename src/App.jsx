@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import useReveal from './hooks/useReveal.js'
 import Seo from './components/Seo.jsx'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Metrics from './components/Metrics.jsx'
-import HowItWorks from './components/HowItWorks.jsx'
 import Experience from './components/Experience.jsx'
 import Priorities from './components/Priorities.jsx'
 import Features from './components/Features.jsx'
@@ -17,15 +16,22 @@ import RiskFirst from './components/RiskFirst.jsx'
 import Capabilities from './components/Capabilities.jsx'
 import FinalCta from './components/FinalCta.jsx'
 import Footer from './components/Footer.jsx'
-import About from './components/About.jsx'
-import Contact from './components/Contact.jsx'
-import Terms from './components/Terms.jsx'
-import Privacy from './components/Privacy.jsx'
-import RiskDisclosure from './components/RiskDisclosure.jsx'
-import NotFound from './components/NotFound.jsx'
-import ThankYou from './components/ThankYou.jsx'
-import BlogArticle from './components/BlogArticle.jsx'
-import FaqPage from './components/FaqPage.jsx'
+
+// Route-only pages are code-split: a visitor landing on the homepage would
+// otherwise download the markup for the legal pages, the review article and
+// the 404 along with everything they actually need. The homepage's own
+// sections and the shared chrome stay eager so the first paint is not waiting
+// on a second round-trip.
+const About = lazy(() => import('./components/About.jsx'))
+const Contact = lazy(() => import('./components/Contact.jsx'))
+const HowItWorks = lazy(() => import('./components/HowItWorks.jsx'))
+const Terms = lazy(() => import('./components/Terms.jsx'))
+const Privacy = lazy(() => import('./components/Privacy.jsx'))
+const RiskDisclosure = lazy(() => import('./components/RiskDisclosure.jsx'))
+const NotFound = lazy(() => import('./components/NotFound.jsx'))
+const ThankYou = lazy(() => import('./components/ThankYou.jsx'))
+const BlogArticle = lazy(() => import('./components/BlogArticle.jsx'))
+const FaqPage = lazy(() => import('./components/FaqPage.jsx'))
 
 // Clean-path routing: "/" -> home, "/about" -> About, anything unknown -> 404.
 // Fragment anchors like "#register" keep working as in-page scroll links.
@@ -154,7 +160,13 @@ export default function App() {
     <>
       <Seo route={routeName} />
       <Header route={routeName} />
-      <main>{children}</main>
+      {/* Route pages load as their own chunk. The spinner holds the space so
+          the header and footer do not jump while it arrives. */}
+      <main>
+        <Suspense fallback={<div className="route-loading"><span className="route-spinner" /></div>}>
+          {children}
+        </Suspense>
+      </main>
       <Footer />
     </>
   )
