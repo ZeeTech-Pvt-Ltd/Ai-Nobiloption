@@ -97,7 +97,6 @@ export default function About() {
       <section className="about-hero">
         <div className="container about-hero-inner">
           <div className="about-hero-copy reveal">
-            <span className="eyebrow">About Ai Nobiloption</span>
             <h1 className="h1">
               Automated trading, <mark>without the complexity</mark>
             </h1>
@@ -144,7 +143,6 @@ export default function About() {
       <section className="section about-section">
         <div className="container">
           <div className="section-head reveal">
-            <span className="eyebrow">What Sets Us Apart</span>
             <h2 className="h2">Technology, safety, and personal guidance</h2>
             <p className="lead">
               Our platform pairs automated market analysis with human support, so you never have to make decisions alone.
@@ -167,7 +165,6 @@ export default function About() {
       <section className="section about-section alt">
         <div className="container">
           <div className="section-head reveal">
-            <span className="eyebrow">Our Mission</span>
             <h2 className="h2">What we believe and why we built Ai Nobiloption</h2>
           </div>
 
@@ -189,7 +186,6 @@ export default function About() {
       <section className="section about-section about-story-sec">
         <div className="container">
           <div className="section-head reveal">
-            <span className="eyebrow">Our Story</span>
             <h2 className="h2">From a simple idea to a platform trusted by millions</h2>
           </div>
 
@@ -221,7 +217,6 @@ export default function About() {
       <section className="section about-section">
         <div className="container">
           <div className="section-head reveal">
-            <span className="eyebrow">Security & Data Protection</span>
             <h2 className="h2">Built on a safer trading experience</h2>
             <p className="lead">We apply a range of security and data-protection measures designed to support safer trading.</p>
             <div className="about-badges">
@@ -244,7 +239,6 @@ export default function About() {
       </section>
 
       <CtaBanner
-        eyebrow="Ready to begin?"
         title="Put automated trading to work"
         text="Create your Ai Nobiloption account in about two minutes and let AI-driven strategies trade around the clock, with support available 24/7."
         cta="Register Now"

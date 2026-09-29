@@ -1,6 +1,6 @@
 import { ArrowRight } from './icons.jsx'
 
-export default function CtaBanner({ eyebrow, title, text, cta }) {
+export default function CtaBanner({ title, text, cta }) {
   return (
     <section className="section">
       <div className="container">
@@ -12,7 +12,6 @@ export default function CtaBanner({ eyebrow, title, text, cta }) {
             <circle cx="420" cy="92" r="5" fill="#C8F000" opacity="0.6" />
           </svg>
           <div>
-            <span className="eyebrow">{eyebrow}</span>
             <h2>{title}</h2>
             <p>{text}</p>
           </div>

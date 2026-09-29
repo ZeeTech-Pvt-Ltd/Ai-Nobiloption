@@ -12,26 +12,9 @@
 // results, so there is nothing that needs a source.
 
 const points = [
-  {
-    t: 'You can lose money',
-    d: 'Trading FX, CFDs and cryptocurrencies is speculative. You could lose some or all of the money you put in.',
-  },
-  {
-    t: 'Leverage cuts both ways',
-    d: 'Leverage increases the size of a position and the size of a loss. A small move against you can wipe out a large balance.',
-  },
-  {
-    t: 'AI is not a guarantee',
-    d: 'Analysis and signals are built from historical and live data. Models can be wrong, and no output is a promise of profit.',
-  },
-  {
-    t: 'Past performance is not a guide',
-    d: 'Any performance shown on this site is illustrative. It is not a reliable indicator of what happens next.',
-  },
-  {
-    t: 'Costs reduce your returns',
-    d: 'Spreads and fees apply to every trade, whether it ends in a gain or a loss.',
-  },
+  { t: 'You can lose money', d: 'Trading FX, CFDs and cryptocurrencies is speculative. You could lose what you put in.' },
+  { t: 'Leverage cuts both ways', d: 'A small move against you can wipe out a large balance.' },
+  { t: 'AI is not a guarantee', d: 'Models can be wrong. No signal is a promise of profit.' },
 ]
 
 export default function RiskFirst() {
@@ -40,17 +23,15 @@ export default function RiskFirst() {
       <div className="container">
         <div className="risk-band reveal">
           <div className="risk-copy">
-            <span className="eyebrow">Risk warning</span>
             <h2 className="h2">Understand the risk before you trade</h2>
             <p className="risk-lead">
-              Trading carries real risk. This is not financial advice, and nothing here is a
-              personalised recommendation. Please read this before you register, not after.
+              Trading carries real risk. This is not financial advice. Never trade money you cannot
+              afford to lose.
             </p>
 
             <ol className="risk-list">
-              {points.map((p, i) => (
+              {points.map((p) => (
                 <li key={p.t}>
-                  <span className="risk-n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
                   <div>
                     <b>{p.t}</b>
                     <span>{p.d}</span>
@@ -58,10 +39,6 @@ export default function RiskFirst() {
                 </li>
               ))}
             </ol>
-
-            <p className="risk-foot">
-              Consider seeking independent advice, and never trade money you cannot afford to lose.
-            </p>
           </div>
 
           {/* Drawdown, not growth: the one chart on this site that argues
@@ -94,8 +71,7 @@ export default function RiskFirst() {
               <circle cx="360" cy="182" r="5" fill="#F87171" />
             </svg>
             <p className="risk-chart-note">
-              A hypothetical equity curve, shown to illustrate how a losing run looks.
-              It is not this platform's performance.
+              A hypothetical equity curve. Not this platform's performance.
             </p>
           </div>
         </div>

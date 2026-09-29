@@ -17,7 +17,6 @@ export default function Contact() {
       {/* Hero */}
       <section className="ct-hero">
         <div className="container ct-hero-inner reveal">
-          <span className="eyebrow">Contact Us</span>
           <h1 className="h1">
             We&rsquo;d love to <mark>hear from you</mark>
           </h1>
@@ -32,7 +31,6 @@ export default function Contact() {
       <section className="section ct-main">
         <div className="container ct-grid">
           <div className="ct-info reveal">
-            <span className="eyebrow">Get in touch</span>
             <h2 className="h2">How to reach us</h2>
             <p className="lead">
               Pick whichever channel works best for you, email, or the message form on this page.
@@ -63,7 +61,6 @@ export default function Contact() {
       </section>
 
       <CtaBanner
-        eyebrow="Explore trading opportunities"
         title="Register now and our team will be in touch"
         text="Set up your Ai Nobiloption account in minutes and put automated AI trading to work, with help available 24/7."
         cta="Register Now"

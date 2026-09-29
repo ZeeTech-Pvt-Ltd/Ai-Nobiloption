@@ -6,7 +6,6 @@ export default function Precision() {
     <section className="section">
       <div className="container">
         <div className="section-head reveal">
-          <span className="eyebrow">Standout technology</span>
           <h2 className="h2">Precision, Speed, and <mark>Security</mark>, All in One System</h2>
           <p className="lead">A closer look at the details that set Ai Nobiloption apart.</p>
         </div>

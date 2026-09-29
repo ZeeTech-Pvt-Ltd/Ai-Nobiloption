@@ -5,7 +5,6 @@ export default function Testimonials() {
     <section className="section" style={{ paddingTop: 0 }}>
       <div className="container">
         <div className="section-head reveal">
-          <span className="eyebrow">{testimonials.eyebrow}</span>
           <h2 className="h2">{testimonials.title}<mark>{testimonials.titleMark}</mark></h2>
           <p className="lead">{testimonials.lead}</p>
         </div>

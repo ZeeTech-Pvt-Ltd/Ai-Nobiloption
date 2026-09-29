@@ -5,7 +5,6 @@ export default function NotFound() {
     <section className="nf">
       <div className="container nf-inner reveal">
         <div className="nf-code" aria-hidden="true">404</div>
-        <span className="eyebrow">Error</span>
         <h1 className="h1">
           Page <mark>not found</mark>
         </h1>

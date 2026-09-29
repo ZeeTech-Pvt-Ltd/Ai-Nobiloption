@@ -12,7 +12,6 @@ export default function BlogArticle() {
       {/* Article hero */}
       <section className="blog-hero">
         <div className="container blog-hero-inner reveal">
-          <span className="eyebrow">Platform Review</span>
           <h1 className="h1">
             Ai Nobiloption Review Australia, <mark>Scam or Legit?</mark>
           </h1>

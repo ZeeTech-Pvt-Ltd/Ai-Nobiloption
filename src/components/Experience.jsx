@@ -1,13 +1,12 @@
 import { experience } from '../data/content.js'
 
 export default function Experience() {
-  const { eyebrow, titleA, titleMark, lead, rows } = experience
+  const { titleA, titleMark, lead, rows } = experience
 
   return (
     <section className="section exp-sec" id="experience">
       <div className="container">
         <div className="section-head reveal">
-          <span className="eyebrow">{eyebrow}</span>
           <h2 className="h2">{titleA}<mark>{titleMark}</mark></h2>
           {(Array.isArray(lead) ? lead : [lead]).map((p, i) => (
             <p className="lead" key={i}>{p}</p>

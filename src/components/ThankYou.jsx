@@ -5,7 +5,6 @@ export default function ThankYou() {
     <section className="ty-hero">
       <div className="container ty-inner reveal">
         <span className="ty-badge"><Check size={30} /></span>
-        <span className="eyebrow">Registration Successful</span>
         <h1 className="h1">
           Thank you for <mark>registering</mark>
         </h1>

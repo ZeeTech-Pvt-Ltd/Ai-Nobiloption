@@ -109,7 +109,6 @@ export default function Terms() {
       {/* Hero */}
       <section className="terms-hero">
         <div className="container terms-hero-inner reveal">
-          <span className="eyebrow">Legal</span>
           <h1 className="h1">
             Terms of <mark>Use</mark>
           </h1>

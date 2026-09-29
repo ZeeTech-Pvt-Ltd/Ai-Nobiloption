@@ -8,7 +8,6 @@ export default function Priorities() {
     <section className="section prio" id="priorities">
       <div className="container">
         <div className="section-head reveal">
-          <span className="eyebrow">{priorities.eyebrow}</span>
           <h2 className="h2">{priorities.title}<mark>{priorities.titleMark}</mark></h2>
           <p className="lead">{priorities.lead}</p>
         </div>

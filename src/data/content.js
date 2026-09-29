@@ -12,7 +12,6 @@ export const nav = [
 ]
 
 export const hero = {
-  eyebrow: '🇦🇺 Trusted by traders across Australia',
   title: 'Ai Nobiloption',
   titleMark: 'Automated Trading Platform',
   lead: 'Ai Nobiloption unites market tools, account management and automated trading inside a single, straightforward hub. Track the markets, run your account and act on clear insights, all on a platform built to be effortless.',
@@ -20,11 +19,6 @@ export const hero = {
     'AI strategies that work for you around the clock',
     'Real-time market tracking with instant alerts, night and day',
     'Secure, transparent and easy for every level of experience',
-  ],
-  stats: [
-    { value: '4M+', label: 'Verified users' },
-    { value: '4.8★', label: 'Community score' },
-    { value: '$500M+', label: 'Client deposits' },
   ],
 }
 
@@ -68,7 +62,6 @@ export const trustStrip = [
 ]
 
 export const experience = {
-  eyebrow: 'Introduction',
   titleA: 'What Is ',
   titleMark: 'Ai Nobiloption?',
   lead: [
@@ -128,7 +121,6 @@ export const experience = {
 }
 
 export const priorities = {
-  eyebrow: 'Why Ai Nobiloption',
   title: 'Our ',
   titleMark: 'priorities',
   lead: 'Security, simplicity and total openness, at every single step.',
@@ -185,7 +177,6 @@ export const precision = [
 ]
 
 export const testimonials = {
-  eyebrow: 'Community',
   title: 'Reviews From ',
   titleMark: 'Our Community',
   lead: 'Real experiences, straight from verified users.',
@@ -209,7 +200,6 @@ export const testimonials = {
 }
 
 export const portfolio = {
-  eyebrow: 'Portfolio management',
   title: 'Manage Your ',
   titleMark: 'Portfolio with Data-Driven',
   titleEnd: ' Trading',

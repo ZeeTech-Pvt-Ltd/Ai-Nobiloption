@@ -27,7 +27,6 @@ export default function Faq() {
     <section className="section" id="faq">
       <div className="container">
         <div className="section-head reveal">
-          <span className="eyebrow">Need help?</span>
           <h2 className="h2">Frequently Asked <mark>Questions</mark></h2>
         </div>
 

@@ -1,6 +1,5 @@
 import RegistrationForm from './RegistrationForm.jsx'
 import Ticker from './Ticker.jsx'
-import CountUp from './CountUp.jsx'
 import { Check, ArrowRight } from './icons.jsx'
 import { hero } from '../data/content.js'
 
@@ -12,7 +11,6 @@ export default function Hero() {
 
       <div className="container hero-inner">
         <div className="hero-copy reveal">
-          <span className="eyebrow">{hero.eyebrow}</span>
           <h1 className="h1">
             {hero.title} <mark>{hero.titleMark}</mark>
           </h1>
@@ -31,15 +29,6 @@ export default function Hero() {
               Register Now <ArrowRight />
             </a>
             <a className="btn btn-ghost" href="/how-it-works">How It Works</a>
-          </div>
-
-          <div className="hero-stats">
-            {hero.stats.map((s) => (
-              <div className="hero-stat" key={s.value}>
-                <CountUp className="stat-num" value={s.value} duration={1600} />
-                <span>{s.label}</span>
-              </div>
-            ))}
           </div>
         </div>
 

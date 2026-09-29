@@ -40,7 +40,6 @@ export default function FaqPage() {
       {/* Hero */}
       <section className="terms-hero">
         <div className="container terms-hero-inner reveal">
-          <span className="eyebrow">Support</span>
           <h1 className="h1">
             Frequently Asked <mark>Questions</mark>
           </h1>
@@ -82,7 +81,6 @@ export default function FaqPage() {
           </div>
 
           <div className="faq-support reveal">
-            <span className="eyebrow">Support</span>
             <h2>Still have questions?</h2>
             <p>Our team is happy to help with anything not covered above, send us a message and we will point you in the right direction.</p>
             <a className="btn btn-primary" href="/contact">

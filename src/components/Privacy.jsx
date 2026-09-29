@@ -117,7 +117,6 @@ export default function Privacy() {
       {/* Hero */}
       <section className="terms-hero">
         <div className="container terms-hero-inner reveal">
-          <span className="eyebrow">Legal</span>
           <h1 className="h1">
             Privacy <mark>Policy</mark>
           </h1>

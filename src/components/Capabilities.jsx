@@ -5,7 +5,6 @@ export default function Capabilities() {
     <section className="section caps">
       <div className="container">
         <div className="section-head reveal">
-          <span className="eyebrow">At a glance</span>
           <h2 className="h2">Core <mark>Capabilities</mark> of the Ai Nobiloption Trading Platform</h2>
         </div>
 

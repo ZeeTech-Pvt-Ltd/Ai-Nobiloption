@@ -2,7 +2,7 @@ import { Check } from './icons.jsx'
 import { portfolio } from '../data/content.js'
 
 export default function Portfolio() {
-  const { eyebrow, title, titleMark, titleEnd, lead, checks, image, imageAlt, imageW, imageH } = portfolio
+  const { title, titleMark, titleEnd, lead, checks, image, imageAlt, imageW, imageH } = portfolio
 
   return (
     <section className="section feat" id="portfolio">
@@ -19,7 +19,6 @@ export default function Portfolio() {
         </div>
 
         <div className="feat-duo-copy reveal">
-          <span className="eyebrow">{eyebrow}</span>
           <h2 className="h2">{title}<mark>{titleMark}</mark>{titleEnd}</h2>
           <p className="lead">{lead}</p>
           <ul className="hero-checks">
