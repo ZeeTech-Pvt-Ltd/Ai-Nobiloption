@@ -1,91 +1,79 @@
-// Country auto-detection (from visitor IP) + per-country phone examples.
+// Country hints for the phone field.
+//
+// The hint comes from the browser's own timezone - never from a network geo
+// lookup - so no visitor IP leaves the page and the Privacy Policy's "no
+// third-party requests" claim stays true.
+//
+// Australia is the site's target market, so it is the default. The switch to
+// the visitor's own country is delayed slightly so the AU baseline is actually
+// seen first, and it never fires once the visitor has started typing.
 
-// Example phone-number format shown as the field placeholder, keyed by ISO code.
-// Covers the full country list used by the phone picker; falls back to a
-// generic placeholder for anything not listed.
-const PHONE_EXAMPLE = {
-  AF: '070 123 4567', AL: '069 123 4567', DZ: '0551 23 45 67', AS: '555 1234',
-  AD: '312 345', AO: '923 123 456', AI: '555 1234', AG: '555 1234',
-  AR: '11 2345 6789', AM: '077 123456', AW: '560 1234', AU: '0412 345 678',
-  AT: '0664 123456', AZ: '050 123 45 67', BS: '555 1234', BH: '3600 1234',
-  BD: '01812 345678', BB: '555 1234', BY: '029 491 23 45', BE: '0470 12 34 56',
-  BZ: '622 1234', BJ: '90 01 12 34', BM: '555 1234', BT: '17 12 34 56',
-  BO: '7123 4567', BA: '061 123 456', BW: '71 123 456', BR: '11 91234 5678',
-  IO: '123 4567', VG: '555 1234', BN: '712 3456', BG: '048 123 456',
-  BF: '70 12 34 56', BI: '79 123 456', KH: '091 234 567', CM: '6 71 23 45 67',
-  CA: '555 123 4567', CV: '991 12 34', BQ: '318 1234', KY: '555 1234',
-  CF: '70 12 34 56', TD: '63 12 34 56', CL: '9 1234 5678', CN: '131 2345 6789',
-  CX: '0412 345 678', CC: '0412 345 678', CO: '321 123 4567', KM: '321 23 45',
-  CG: '06 123 4567', CD: '0991 234 567', CK: '21 234', CR: '8312 3456',
-  CI: '01 23 45 67', HR: '091 234 5678', CU: '5123 4567', CW: '9 518 1234',
-  CY: '96 123456', CZ: '601 234 567', DK: '32 12 34 56', DJ: '77 83 12 34',
-  DM: '555 1234', DO: '555 1234', EC: '099 123 4567', EG: '010 1234 5678',
-  SV: '7012 3456', GQ: '222 123 456', ER: '07 123 456', EE: '5123 4567',
-  SZ: '7612 3456', ET: '091 123 4567', FK: '51234', FO: '21 12 34',
-  FJ: '701 2345', FI: '041 234 5678', FR: '06 12 34 56 78', GF: '0694 12 34 56',
-  PF: '87 12 34 56', GA: '06 12 34 56', GM: '301 2345', GE: '555 12 34 56',
-  DE: '0151 23456789', GH: '023 123 4567', GI: '5712 3456', GR: '691 234 5678',
-  GL: '22 12 34', GD: '555 1234', GP: '0690 12 34 56', GU: '555 1234',
-  GT: '5123 4567', GG: '07781 123456', GN: '601 12 34 56', GW: '955 012 345',
-  GY: '609 1234', HT: '34 12 3456', HN: '9123 4567', HK: '5123 4567',
-  HU: '20 123 4567', IS: '611 1234', IN: '98765 43210', ID: '0812 3456 7890',
-  IR: '0912 345 6789', IQ: '0791 234 5678', IE: '085 123 4567', IM: '07624 123456',
-  IL: '050 123 4567', IT: '312 345 6789', JM: '555 1234', JP: '090 1234 5678',
-  JE: '07797 123456', JO: '079 012 3456', KZ: '771 123 4567', KE: '0712 345678',
-  KI: '720 12345', XK: '044 123 456', KW: '500 12345', KG: '0700 123 456',
-  LA: '020 23 123 456', LV: '21 234 567', LB: '71 123 456', LS: '5812 3456',
-  LR: '077 012 3456', LY: '091 234 5678', LI: '660 123 456', LT: '612 34567',
-  LU: '621 123 456', MO: '6612 3456', MG: '034 12 345 67', MW: '099 123 4567',
-  MY: '012 345 6789', MV: '771 2345', ML: '65 12 34 56', MT: '7900 1234',
-  MH: '235 1234', MQ: '0696 12 34 56', MR: '22 12 34 56', MU: '5712 3456',
-  YT: '0639 12 34 56', MX: '55 1234 5678', FM: '350 1234', MD: '060 123 456',
-  MC: '06 12 34 56 78', MN: '9912 3456', ME: '067 123 456', MS: '555 1234',
-  MA: '0650 123456', MZ: '82 123 4567', MM: '09 123 456 789', NA: '081 123 4567',
-  NR: '555 1234', NP: '984 123 4567', NL: '06 12345678', NC: '75 12 34',
-  NZ: '021 234 5678', NI: '8123 4567', NE: '93 12 34 56', NG: '0803 123 4567',
-  NU: '1234', NF: '3 81234', KP: '02 123 4567', MK: '072 123 456',
-  MP: '555 1234', NO: '406 12 345', OM: '9212 3456', PK: '0301 2345678',
-  PW: '620 1234', PS: '0599 123 456', PA: '6123 4567', PG: '7012 3456',
-  PY: '961 123 456', PE: '912 345 678', PH: '0917 123 4567', PL: '512 345 678',
-  PT: '912 345 678', PR: '555 1234', QA: '3312 3456', RE: '0692 12 34 56',
-  RO: '0712 345 678', RU: '912 345 67 89', RW: '078 123 4567', BL: '0690 12 34 56',
-  SH: '51234', KN: '555 1234', LC: '555 1234', MF: '0690 12 34 56', PM: '55 12 34',
-  VC: '555 1234', WS: '72 12345', SM: '66 66 12 12', ST: '981 2345',
-  SA: '051 234 5678', SN: '70 123 45 67', RS: '060 123 4567', SC: '251 2345',
-  SL: '025 123 456', SG: '8123 4567', SX: '555 1234', SK: '0912 345 678',
-  SI: '031 234 567', SB: '74 123 45', SO: '07 123 4567', ZA: '071 234 5678',
-  KR: '010 1234 5678', SS: '097 123 4567', ES: '612 345 678', LK: '071 234 5678',
-  SD: '091 123 4567', SR: '741 2345', SJ: '406 12 345', SE: '070 123 45 67',
-  CH: '076 123 45 67', SY: '0944 123 456', TW: '0912 345 678', TJ: '917 12 34 56',
-  TZ: '0712 345 678', TH: '081 234 5678', TL: '7721 2345', TG: '90 12 34 56',
-  TK: '1234', TO: '888 1234', TT: '555 1234', TN: '20 123 456',
-  TR: '0501 234 56 78', TM: '65 12 34 56', TC: '555 1234', TV: '1234',
-  UG: '0712 345678', UA: '050 123 4567', AE: '050 123 4567', GB: '07123 456789',
-  US: '555 123 4567', UY: '099 123 456', VI: '555 1234', UZ: '091 234 56 78',
-  VU: '591 2345', VA: '06 698 12345', VE: '0412 123 4567', VN: '0912 345 678',
-  WF: '72 12 34', EH: '0650 123456', YE: '0712 345 678', ZM: '0955 123 456',
-  ZW: '071 234 5678',
+const TZ_COUNTRY = {
+  // Australasia
+  'Australia/Sydney': 'AU', 'Australia/Melbourne': 'AU', 'Australia/Brisbane': 'AU',
+  'Australia/Adelaide': 'AU', 'Australia/Perth': 'AU', 'Australia/Darwin': 'AU',
+  'Australia/Hobart': 'AU', 'Australia/Lord_Howe': 'AU', 'Australia/Eucla': 'AU',
+  'Pacific/Auckland': 'NZ', 'Pacific/Chatham': 'NZ', 'Pacific/Fiji': 'FJ',
+  // Asia
+  'Asia/Karachi': 'PK', 'Asia/Kolkata': 'IN', 'Asia/Colombo': 'LK', 'Asia/Dhaka': 'BD',
+  'Asia/Kathmandu': 'NP', 'Asia/Dubai': 'AE', 'Asia/Riyadh': 'SA', 'Asia/Qatar': 'QA',
+  'Asia/Kuwait': 'KW', 'Asia/Muscat': 'OM', 'Asia/Jerusalem': 'IL', 'Asia/Beirut': 'LB',
+  'Asia/Shanghai': 'CN', 'Asia/Hong_Kong': 'HK', 'Asia/Taipei': 'TW', 'Asia/Seoul': 'KR',
+  'Asia/Tokyo': 'JP', 'Asia/Singapore': 'SG', 'Asia/Kuala_Lumpur': 'MY', 'Asia/Jakarta': 'ID',
+  'Asia/Bangkok': 'TH', 'Asia/Manila': 'PH', 'Asia/Ho_Chi_Minh': 'VN',
+  // Europe
+  'Europe/London': 'GB', 'Europe/Dublin': 'IE', 'Europe/Paris': 'FR', 'Europe/Berlin': 'DE',
+  'Europe/Madrid': 'ES', 'Europe/Rome': 'IT', 'Europe/Amsterdam': 'NL', 'Europe/Brussels': 'BE',
+  'Europe/Zurich': 'CH', 'Europe/Vienna': 'AT', 'Europe/Stockholm': 'SE', 'Europe/Oslo': 'NO',
+  'Europe/Copenhagen': 'DK', 'Europe/Helsinki': 'FI', 'Europe/Warsaw': 'PL', 'Europe/Prague': 'CZ',
+  'Europe/Athens': 'GR', 'Europe/Bucharest': 'RO', 'Europe/Istanbul': 'TR', 'Europe/Kyiv': 'UA',
+  'Europe/Moscow': 'RU', 'Europe/Lisbon': 'PT',
+  // Americas
+  'America/New_York': 'US', 'America/Chicago': 'US', 'America/Denver': 'US',
+  'America/Los_Angeles': 'US', 'America/Phoenix': 'US', 'America/Anchorage': 'US',
+  'Pacific/Honolulu': 'US', 'America/Toronto': 'CA', 'America/Vancouver': 'CA',
+  'America/Mexico_City': 'MX', 'America/Sao_Paulo': 'BR',
+  'America/Argentina/Buenos_Aires': 'AR', 'America/Santiago': 'CL',
+  'America/Bogota': 'CO', 'America/Lima': 'PE',
+  // Africa
+  'Africa/Johannesburg': 'ZA', 'Africa/Nairobi': 'KE', 'Africa/Lagos': 'NG', 'Africa/Cairo': 'EG',
 }
 
-export function phoneExample(code) {
-  return PHONE_EXAMPLE[code] || 'Enter your phone number'
-}
-
-// Resolve the visitor's ISO country code from a free IP-geolocation endpoint.
-// Returns null (and callers keep their default) if it can't be determined.
-export async function detectCountryCode() {
-  const controller = new AbortController()
-  const timer = setTimeout(() => controller.abort(), 5000)
+/** The visitor's ISO country code from the browser timezone, or null. */
+export function timezoneCountry() {
   try {
-    const res = await fetch('https://ipwho.is/', { signal: controller.signal })
-    if (!res.ok) return null
-    const data = await res.json()
-    if (data.success === false) return null
-    const code = data.country_code || data.country
-    return typeof code === 'string' ? code.toUpperCase() : null
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+    return (tz && TZ_COUNTRY[tz]) || null
   } catch {
     return null
-  } finally {
-    clearTimeout(timer)
   }
+}
+
+// Sample national numbers shown in the empty phone field, one per country.
+// Written WITHOUT the trunk "0": the dial code is displayed in its own prefix
+// beside the field, so the national part must not repeat it.
+const PHONE_EXAMPLE = {
+  AU: '412 345 678', NZ: '21 234 5678', GB: '7911 123456', IE: '85 123 4567',
+  US: '202 555 0134', CA: '416 555 0134', MX: '55 1234 5678', BR: '11 98765 4321',
+  AR: '11 2345 6789', CL: '9 1234 5678', CO: '300 123 4567', PE: '912 345 678',
+  FR: '6 12 34 56 78', DE: '151 2345 6789', IT: '312 345 6789', ES: '612 345 678',
+  PT: '912 345 678', NL: '6 1234 5678', BE: '470 12 34 56', CH: '79 123 45 67',
+  AT: '664 123 4567', SE: '70 123 45 67', NO: '412 34 567', DK: '20 12 34 56',
+  FI: '40 123 4567', PL: '512 345 678', GR: '691 234 5678', RO: '712 345 678',
+  CZ: '601 123 456', HU: '30 123 4567', TR: '532 123 4567', RU: '912 345 67 89',
+  UA: '67 123 4567', IN: '98765 43210', PK: '300 1234567', BD: '1712 345678',
+  LK: '71 234 5678', NP: '9812 345678', AF: '70 123 4567', CN: '138 0013 8000',
+  HK: '9123 4567', TW: '912 345 678', JP: '90 1234 5678', KR: '10 1234 5678',
+  SG: '8123 4567', MY: '12 345 6789', TH: '81 234 5678', VN: '91 234 5678',
+  ID: '812 3456 789', PH: '917 123 4567', AE: '50 123 4567', SA: '55 123 4567',
+  QA: '3312 3456', KW: '5123 4567', IL: '50 123 4567', EG: '10 1234 5678',
+  ZA: '71 234 5678', NG: '801 234 5678', KE: '712 345678', GH: '20 123 4567',
+  MA: '612 345 678', ET: '91 123 4567',
+}
+
+const PHONE_EXAMPLE_FALLBACK = '123 456 789'
+
+/** The empty-field sample number for a country, without its trunk "0". */
+export function phoneExample(code) {
+  return PHONE_EXAMPLE[code] || PHONE_EXAMPLE_FALLBACK
 }

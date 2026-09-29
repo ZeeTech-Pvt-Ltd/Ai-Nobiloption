@@ -250,18 +250,18 @@ export const seo = {
     ],
   },
 
-  disclosure: {
+  'risk-disclosure': {
     title: 'Risk Disclosure, Ai Nobiloption Automated Trading Platform',
     description:
       'Read the Ai Nobiloption Risk Disclosure, key information about the risks of trading FX, CFDs, and cryptocurrencies.',
     keywords: 'Ai Nobiloption risk disclosure, trading risk warning, CFD crypto risk',
-    canonical: `${SITE}/disclosure`,
+    canonical: `${SITE}/risk-disclosure`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'website',
     ogImageAlt: 'Ai Nobiloption risk disclosure',
     schema: [
-      webPage('Risk Disclosure', `${SITE}/disclosure`, 'The Ai Nobiloption Risk Disclosure, information about the risks of trading FX, CFDs, and cryptocurrencies.'),
-      breadcrumb('Risk Disclosure', '/disclosure'),
+      webPage('Risk Disclosure', `${SITE}/risk-disclosure`, 'The Ai Nobiloption Risk Disclosure, information about the risks of trading FX, CFDs, and cryptocurrencies.'),
+      breadcrumb('Risk Disclosure', '/risk-disclosure'),
     ],
   },
 
@@ -270,7 +270,7 @@ export const seo = {
     description:
       'Your Ai Nobiloption registration has been received. Our team will review your details and contact you shortly to activate your account.',
     keywords: '',
-    canonical: `${SITE}/thank-you`,
+    canonical: null, // noindexed: a canonical alongside it would be a contradictory signal
     robots: 'noindex, nofollow',
     type: 'website',
     ogImageAlt: 'Thank you, Ai Nobiloption registration',

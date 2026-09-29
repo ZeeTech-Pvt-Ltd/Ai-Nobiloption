@@ -324,7 +324,7 @@ export const footer = {
   legal: [
     { label: 'Term Of Use', href: '/terms' },
     { label: 'Privacy Policy', href: '/privacy' },
-    { label: 'Risk Disclosure', href: '/disclosure' },
+    { label: 'Risk Disclosure', href: '/risk-disclosure' },
     { label: 'Sign Up', href: '/', scroll: '#register' },
   ],
   disclaimer:

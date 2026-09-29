@@ -1,11 +1,6 @@
-import { useEffect, useState } from 'react'
 import CtaBanner from './CtaBanner.jsx'
-import PhoneNumberInput from './PhoneNumberInput.jsx'
-import { ArrowRight, Icon } from './icons.jsx'
-import { submitLead } from '../lib/submitLead.js'
-import { navigateTo } from '../lib/navigate.js'
-import { countries } from '../data/countries.js'
-import { detectCountryCode, phoneExample } from '../lib/geo.js'
+import RegistrationForm from './RegistrationForm.jsx'
+import { Icon } from './icons.jsx'
 
 // Layout and components follow the site's own design system; copy is
 // Ai Nobiloption-branded.
@@ -17,49 +12,6 @@ const info = [
 ]
 
 export default function Contact() {
-  const [status, setStatus] = useState('idle') // idle | sending | err
-  const [errMsg, setErrMsg] = useState('')
-  const [phone, setPhone] = useState('')
-  const [country, setCountry] = useState('AU')
-  const dial = countries.find((c) => c[0] === country)?.[2] ?? 61
-
-  // Auto-select the country from the visitor's IP, falling back to AU.
-  useEffect(() => {
-    let mounted = true
-    detectCountryCode().then((code) => {
-      if (mounted && code && countries.some((c) => c[0] === code)) setCountry(code)
-    })
-    return () => { mounted = false }
-  }, [])
-
-  const onSubmit = async (e) => {
-    e.preventDefault()
-    const data = new FormData(e.target)
-    const firstName = String(data.get('firstName') ?? '').trim()
-    const lastName = String(data.get('lastName') ?? '').trim()
-    const email = String(data.get('email') ?? '').trim()
-    if (!firstName || !lastName || !email || !phone) return
-    setStatus('sending')
-    setErrMsg('')
-    try {
-      // Send the full international number (E.164), e.g. +61 + 0400 000 000 -> 61400000000.
-      // Drop the local trunk prefix "0" first, otherwise 61 gets prepended to
-      // "0400…" producing an invalid "610400000000".
-      let digits = phone.replace(/[^\d]/g, '')
-      if (digits.startsWith('0')) digits = digits.slice(1)
-      const fullPhone = digits.startsWith(String(dial)) ? digits : `${dial}${digits}`
-      const res = await submitLead({ firstName, lastName, email, phone: fullPhone })
-      if (res?.status === 'success') navigateTo('/thank-you')
-      else {
-        setStatus('err')
-        setErrMsg(res?.message || 'Something went wrong. Please try again.')
-      }
-    } catch {
-      setStatus('err')
-      setErrMsg('Something went wrong. Please try again.')
-    }
-  }
-
   return (
     <>
       {/* Hero */}
@@ -103,44 +55,9 @@ export default function Contact() {
           <div className="ct-form-card reveal">
             <h3>Register your interest</h3>
             <p className="ct-form-sub">Fill in your details and our team will be in touch to get you started.</p>
-
-            <form className="ct-form" onSubmit={onSubmit}>
-                <div className="ct-row">
-                  <div className="ct-field">
-                    <label htmlFor="ct-first">First Name *</label>
-                    <input id="ct-first" name="firstName" type="text" placeholder="John" required autoComplete="given-name" />
-                  </div>
-                  <div className="ct-field">
-                    <label htmlFor="ct-last">Last Name *</label>
-                    <input id="ct-last" name="lastName" type="text" placeholder="Doe" required autoComplete="family-name" />
-                  </div>
-                </div>
-
-                <div className="ct-field">
-                  <label htmlFor="ct-email">Email Address *</label>
-                  <input id="ct-email" name="email" type="email" placeholder="you@example.com" required autoComplete="email" />
-                </div>
-
-                <div className="ct-field">
-                  <label htmlFor="ct-phone">Phone Number *</label>
-                  <PhoneNumberInput
-                    id="ct-phone"
-                    name="phone"
-                    country={country}
-                    onCountryChange={setCountry}
-                    value={phone}
-                    onValueChange={setPhone}
-                    placeholder={phoneExample(country)}
-                    autoComplete="tel"
-                  />
-                </div>
-
-                {errMsg && <div className="form-message err">{errMsg}</div>}
-
-                <button className="btn btn-primary" type="submit" disabled={status === 'sending'}>
-                  {status === 'sending' ? 'Sending…' : <>Register Now <ArrowRight size={16} /></>}
-                </button>
-              </form>
+            {/* The same form component the homepage renders - one implementation,
+                so the two can never drift apart. */}
+            <RegistrationForm />
           </div>
         </div>
       </section>

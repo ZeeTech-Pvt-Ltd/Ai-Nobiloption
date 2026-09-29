@@ -44,3 +44,14 @@ if (!html.includes(`href="${entryUrl}"`)) {
 
 writeFileSync(htmlPath, html)
 console.log('index.html updated.')
+
+// 3) Emit 404.html from the same shell. vercel.json only rewrites the known
+//    routes, so any unmatched path falls through to this file and is served
+//    with a real 404 status instead of the homepage at HTTP 200. The static
+//    canonical is stripped: a 404 must not claim to be a canonical page, and
+//    <Seo/> would remove it client-side anyway.
+writeFileSync(
+  path.join(dist, '404.html'),
+  html.replace(/\s*<link rel="canonical"[^>]*>\s*/, '\n'),
+)
+console.log('404.html written.')

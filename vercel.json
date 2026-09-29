@@ -1,6 +1,18 @@
 {
   "redirects": [
-    { "source": "/How-It-Works", "destination": "/how-it-works", "permanent": true }
+    { "source": "/How-It-Works", "destination": "/how-it-works", "permanent": true },
+    { "source": "/disclosure", "destination": "/risk-disclosure", "permanent": true }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/contact", "destination": "/index.html" },
+    { "source": "/faq", "destination": "/index.html" },
+    { "source": "/terms", "destination": "/index.html" },
+    { "source": "/privacy", "destination": "/index.html" },
+    { "source": "/risk-disclosure", "destination": "/index.html" },
+    { "source": "/how-it-works", "destination": "/index.html" },
+    { "source": "/thank-you", "destination": "/index.html" },
+    { "source": "/ai-nobiloption-review-australia-scam", "destination": "/index.html" }
+  ]
 }

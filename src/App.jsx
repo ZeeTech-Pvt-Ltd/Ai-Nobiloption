@@ -13,6 +13,7 @@ import CtaBanner from './components/CtaBanner.jsx'
 import Testimonials from './components/Testimonials.jsx'
 import Portfolio from './components/Portfolio.jsx'
 import Faq from './components/Faq.jsx'
+import RiskFirst from './components/RiskFirst.jsx'
 import Capabilities from './components/Capabilities.jsx'
 import FinalCta from './components/FinalCta.jsx'
 import Footer from './components/Footer.jsx'
@@ -28,11 +29,11 @@ import FaqPage from './components/FaqPage.jsx'
 
 // Clean-path routing: "/" -> home, "/about" -> About, anything unknown -> 404.
 // Fragment anchors like "#register" keep working as in-page scroll links.
-const KNOWN_ROUTES = ['about', 'contact', 'terms', 'privacy', 'disclosure', 'thank-you', 'how-it-works', 'ai-nobiloption-review-australia-scam', 'faq']
+const KNOWN_ROUTES = ['about', 'contact', 'terms', 'privacy', 'risk-disclosure', 'thank-you', 'how-it-works', 'ai-nobiloption-review-australia-scam', 'faq']
 
-// Legacy case-variant paths redirect to their canonical lowercase form
-// (the page used to live at /How-It-Works).
-const LEGACY_PATHS = { '/How-It-Works': '/how-it-works' }
+// Legacy paths redirect to their canonical form: the risk page used to live at
+// /disclosure, and the how-it-works page at /How-It-Works.
+const LEGACY_PATHS = { '/How-It-Works': '/how-it-works', '/disclosure': '/risk-disclosure' }
 
 const getRoute = (path = location.pathname) => {
   const clean = path.split('?')[0].replace(/\/+$/, '')
@@ -162,7 +163,7 @@ export default function App() {
   if (route === 'contact') return <Layout routeName="contact"><Contact /></Layout>
   if (route === 'terms') return <Layout routeName="terms"><Terms /></Layout>
   if (route === 'privacy') return <Layout routeName="privacy"><Privacy /></Layout>
-  if (route === 'disclosure') return <Layout routeName="disclosure"><RiskDisclosure /></Layout>
+  if (route === 'risk-disclosure') return <Layout routeName="risk-disclosure"><RiskDisclosure /></Layout>
   if (route === 'thank-you') return <Layout routeName="thank-you"><ThankYou /></Layout>
   if (route === 'how-it-works') return <Layout routeName="how-it-works"><HowItWorks asPage /></Layout>
   if (route === 'ai-nobiloption-review-australia-scam') return <Layout routeName="ai-nobiloption-review-australia-scam"><BlogArticle /></Layout>
@@ -191,6 +192,9 @@ export default function App() {
           straight into the final sign-up CTA (no dry table in between). */}
       <Capabilities />
       <Faq />
+      {/* The risk band sits above the sign-up CTA so a reader meets the
+          downside before being asked for their details. */}
+      <RiskFirst />
       <FinalCta />
     </Layout>
   )

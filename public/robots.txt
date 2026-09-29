@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Post-registration confirmation page — no indexing value
-Disallow: /thank-you
-
+# /thank-you is deliberately left crawlable. Blocking it here would stop
+# crawlers fetching the page, so they would never see its noindex tag - and
+# the tag is the signal that actually keeps it out of the index.
 Sitemap: https://ai-nobiloption.com/sitemap.xml

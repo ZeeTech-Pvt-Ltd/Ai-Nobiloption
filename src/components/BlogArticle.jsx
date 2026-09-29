@@ -291,7 +291,7 @@ export default function BlogArticle() {
               while tools like this one can offer genuine insight and automation,
               trading always carries risk. AI should be treated as assistance, never
               as a guarantee of profit. We publish a full{' '}
-              <a href="/disclosure">Risk Disclosure</a> so you can weigh up exactly
+              <a href="/risk-disclosure">Risk Disclosure</a> so you can weigh up exactly
               what is involved before committing a single dollar. Research
               thoroughly, understand the risks and set a clear strategy before
               choosing any trading platform.
