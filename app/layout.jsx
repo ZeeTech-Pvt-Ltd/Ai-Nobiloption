@@ -48,13 +48,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en-AU" className={`${inter.variable} ${grotesk.variable}`}>
       <body>
-        {/* Adds the class the reveal rules key off. It runs before the rest of
-            the body is parsed, so JS visitors get the animation and no-JS
-            visitors keep the prerendered content visible. */}
-        <script
-          dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }}
-        />
-
         <Header />
         <main>{children}</main>
         <Footer />

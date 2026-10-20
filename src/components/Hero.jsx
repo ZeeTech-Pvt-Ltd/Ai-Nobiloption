@@ -34,22 +34,6 @@ export default function Hero() {
 
         {/* Registration form */}
         <div className="form-wrap reveal">
-          <div className="form-ring"></div>
-
-          <div className="chip chip-1">
-            <span className="ico" style={{ background: 'var(--grad)' }}>
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M11 3.5a3.5 3.5 0 0 1 3 5.25L17.5 15h-15L6 8.75A3.5 3.5 0 0 1 11 3.5Z" fill="#fff" /></svg>
-            </span>
-            <div><b>4.8 / 5</b><span>1,247 reviews</span></div>
-          </div>
-
-          <div className="chip chip-2">
-            <span className="ico" style={{ background: 'linear-gradient(114deg,#34D399,#6EE7B7)' }}>
-              <Check />
-            </span>
-            <div><b>AU Verified</b><span>Protected registration</span></div>
-          </div>
-
           <div className="reg-card">
             <h2>Register Now</h2>
             <p className="sub">It only takes about two minutes to get started</p>

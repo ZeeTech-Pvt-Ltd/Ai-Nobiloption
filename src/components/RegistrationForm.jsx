@@ -247,23 +247,26 @@ export default function RegistrationForm() {
         {renderField('lastName')}
       </div>
 
-      {renderField('email')}
+      {/* Email and phone share a row, matching the name fields above. */}
+      <div className="field-row">
+        {renderField('email')}
 
-      <div className={`field ${phoneShown ? 'error' : ''}`}>
-        <label htmlFor="phone">Phone Number *</label>
-        <PhoneNumberInput
-          id="phone"
-          name="phone"
-          country={country}
-          onCountryChange={handleCountryChange}
-          value={values.phone}
-          onValueChange={(v) => handleChange('phone')({ target: { value: v } })}
-          onBlur={handleBlur('phone')}
-          invalid={Boolean(phoneShown)}
-          placeholder={phoneExample(country)}
-          autoComplete="tel"
-        />
-        <p className="error-msg" id="phone-error">{errors.phone}</p>
+        <div className={`field ${phoneShown ? 'error' : ''}`}>
+          <label htmlFor="phone">Phone Number *</label>
+          <PhoneNumberInput
+            id="phone"
+            name="phone"
+            country={country}
+            onCountryChange={handleCountryChange}
+            value={values.phone}
+            onValueChange={(v) => handleChange('phone')({ target: { value: v } })}
+            onBlur={handleBlur('phone')}
+            invalid={Boolean(phoneShown)}
+            placeholder={phoneExample(country)}
+            autoComplete="tel"
+          />
+          <p className="error-msg" id="phone-error">{errors.phone}</p>
+        </div>
       </div>
 
       <div className={`field agree ${touched.agree && errors.agree ? 'error' : ''}`}>
