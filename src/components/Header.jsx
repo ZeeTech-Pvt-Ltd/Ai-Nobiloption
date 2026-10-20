@@ -1,13 +1,21 @@
+'use client'
+
 import { useEffect, useMemo, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Logo from './Logo.jsx'
 import useScrollSpy from '../hooks/useScrollSpy.js'
 import { nav } from '../data/content.js'
 
-export default function Header({ route = 'home' }) {
+export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const ids = useMemo(() => ['top', 'experience', 'priorities', 'faq', 'portfolio'], [])
   const active = useScrollSpy(ids)
+
+  // The route key the nav compares against, derived from the URL the router
+  // gives us. "/" is home, "/about/" is "about".
+  const pathname = usePathname() || '/'
+  const route = pathname === '/' ? 'home' : pathname.replace(/^\/|\/$/g, '')
 
   // Route links (/about, /contact…) are active on their own page; home
   // sections (Home -> top, FAQ -> #faq, …) are active via scroll-spy on the

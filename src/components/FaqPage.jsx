@@ -1,3 +1,5 @@
+'use client'
+
 import { useRef, useState } from 'react'
 import { ChevronDown, ArrowRight } from './icons.jsx'
 import { faqPage } from '../data/content.js'

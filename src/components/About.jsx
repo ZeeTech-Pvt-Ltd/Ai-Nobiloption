@@ -199,7 +199,6 @@ export default function About() {
                     width={s.w}
                     height={s.h}
                     loading="lazy"
-                    onError={(e) => { e.currentTarget.style.display = 'none' }}
                   />
                 </div>
                 <div className="about-story-copy">

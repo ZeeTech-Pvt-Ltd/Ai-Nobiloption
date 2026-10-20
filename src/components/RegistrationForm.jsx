@@ -1,10 +1,12 @@
+'use client'
+
 import { useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { ArrowRight } from './icons.jsx'
 import { Visa, Mastercard, PayPal, GooglePay, BankTransfer } from './PayLogos.jsx'
 import PhoneNumberInput from './PhoneNumberInput.jsx'
 import { countries } from '../data/countries.js'
 import { submitLead } from '../lib/submitLead.js'
-import { navigateTo } from '../lib/navigate.js'
 import { timezoneCountry, phoneExample } from '../lib/geo.js'
 import { parsePhoneInput, toE164, validatePhone } from '../lib/phone.js'
 
@@ -48,6 +50,7 @@ const validateEmail = (value) => {
 const initialValues = { firstName: '', lastName: '', email: '', phone: '', agree: false, company: '' }
 
 export default function RegistrationForm() {
+  const router = useRouter()
   const [values, setValues] = useState(initialValues)
   const [errors, setErrors] = useState({})
   const [touched, setTouched] = useState({})
@@ -180,7 +183,7 @@ export default function RegistrationForm() {
       if (!mountedRef.current) return
 
       if (result.ok) {
-        navigateTo('/thank-you')
+        router.push('/thank-you')
         return
       }
 
