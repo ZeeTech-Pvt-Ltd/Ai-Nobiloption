@@ -1,16 +1,48 @@
-# React + Vite
+# Ai Nobiloption
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Marketing site for Ai Nobiloption, an AI automated trading platform aimed at
+Australia. Next.js App Router with static export, plain CSS, no component
+library.
 
-Currently, two official plugins are available:
+## Running it
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev      # http://localhost:3000 (Next picks the next free port if taken)
+npm run build    # static export into out/
+npm run lint
+```
 
-## React Compiler
+`npm run build` prerenders every route to `out/<route>.html`. There is no
+`npm start` for the exported output; serve `out/` with any static file server,
+or deploy it to Vercel.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Layout
 
-## Expanding the Oxlint configuration
+```
+app/
+  layout.jsx     root shell: fonts, metadata, header and footer, analytics
+  globals.css    the whole design system in one file
+  page.jsx       home
+  <route>/       one directory per route
+  not-found.jsx  builds to 404.html
+src/
+  components/    page sections and shared UI
+  data/          content.js (all copy) and seo.js (per route metadata)
+  hooks/         scroll reveal, scroll spy, count up
+  lib/           metadata mapping, phone helpers, lead submission
+public/          images, icons, robots.txt, sitemap.xml, web manifest
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Almost all copy lives in `src/data/content.js`. Per route titles,
+descriptions and structured data live in `src/data/seo.js`, which
+`src/lib/metadata.js` maps onto Next's Metadata API.
+
+## Notes
+
+- Components with hooks need `'use client'` at the top. See `CLAUDE.md`.
+- The lead form posts JSON to the platform relay; `src/lib/submitLead.js`
+  documents the wire contract and the error handling.
+- Sections use `.reveal` for the scroll animation. The CSS only hides them
+  when `html.js` is present, so the prerendered HTML stays visible to
+  crawlers and to visitors without JS.
