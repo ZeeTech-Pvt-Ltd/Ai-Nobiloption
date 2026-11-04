@@ -41,7 +41,7 @@ const organization = {
 
 // The platform described as a schema.org Service, geo-scoped to Australia.
 // all fields reflect claims already on the site (Melbourne base, 24/7
-// support, AU$250 minimum deposit), nothing invented.
+// support, $250 minimum deposit), nothing invented.
 function serviceSchema() {
   return {
     '@context': 'https://schema.org',
@@ -129,7 +129,7 @@ function fullFaqSchema() {
 }
 
 const homeDescription =
-  'Ai Nobiloption, AI-powered automated trading for Australia. 24/7 automated strategies, live signals, bank-grade security. Start with just AU$250.'
+  'Ai Nobiloption, AI-powered automated trading for Australia. 24/7 automated strategies, live signals, bank-grade security. Start with just $250.'
 
 export const seo = {
   home: {
@@ -177,7 +177,7 @@ export const seo = {
   'how-it-works': {
     title: 'How Ai Nobiloption Works, Get Started in 3 Easy Steps',
     description:
-      'Start with Ai Nobiloption in two minutes. Create your account, deposit from just AU$250, and let the AI trade around the clock. No hidden fees.',
+      'Start with Ai Nobiloption in two minutes. Create your account, deposit from just $250, and let the AI trade around the clock. No hidden fees.',
     keywords: 'how to start automated trading, Ai Nobiloption sign up, AI trading steps, automated trading for beginners',
     canonical: `${SITE}/how-it-works`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',

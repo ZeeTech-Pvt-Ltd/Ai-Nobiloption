@@ -222,7 +222,7 @@ export default function BlogArticle() {
             </p>
             <ol>
               <li>
-                <strong>Deposit Funds</strong>, A minimum of AU$250 is needed to
+                <strong>Deposit Funds</strong>, A minimum of $250 is needed to
                 activate your account.
               </li>
               <li>
@@ -300,7 +300,7 @@ export default function BlogArticle() {
           {/* Final CTA, leads to our own registration form on home */}
           <div className="blog-cta reveal">
             <h3>Is Ai Nobiloption right for you?</h3>
-            <p>Start with as little as AU$250, no hidden fees, no subscriptions, withdraw whenever you like.</p>
+            <p>Start with as little as $250, no hidden fees, no subscriptions, withdraw whenever you like.</p>
             <a className="btn btn-primary" href="/" data-scroll="#register">Activate Now Your Account</a>
           </div>
         </div>

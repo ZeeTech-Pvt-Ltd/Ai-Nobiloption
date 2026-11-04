@@ -30,7 +30,7 @@ export default function HomePage() {
 
       <CtaBanner
         title="Built for Every Trader"
-        text="Ai Nobiloption is built by a team of innovators, analysts, and engineers committed to advancing the world of automated trading. Join thousands of verified traders across Australia today."
+        text="Ai Nobiloption is built by a team of innovators, analysts, and engineers committed to advancing the world of automated trading. Join thousands of verified traders worldwide today."
         cta="Register Now"
       />
 

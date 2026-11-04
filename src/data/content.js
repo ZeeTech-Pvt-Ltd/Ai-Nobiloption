@@ -41,7 +41,7 @@ export const steps = [
     no: 'STEP 2',
     icon: 'wallet',
     title: 'Deposit Funds',
-    text: 'Start with as little as AU$250. Fund your account by card, bank transfer or a leading e-wallet, and in most cases the money lands within minutes, with no hidden charges and nothing unexpected.',
+    text: 'Start with as little as $250. Fund your account by card, bank transfer or a leading e-wallet, and in most cases the money lands within minutes, with no hidden charges and nothing unexpected.',
     cta: 'Deposit now',
     green: true,
   },
@@ -157,7 +157,7 @@ export const features = [
   },
   {
     icon: 'shield', title: 'Serious Security, Total Peace of Mind',
-    text: 'Enterprise-grade encryption and multi-factor authentication help keep every Ai Nobiloption account across Australia protected.',
+    text: 'Industry-standard encryption and multi-factor authentication help keep every Ai Nobiloption account protected.',
   },
 ]
 
@@ -271,7 +271,7 @@ export const faq = [
   },
   {
     q: 'How Much Do I Need to Start Trading on Ai Nobiloption?',
-    a: 'A minimum deposit of AU$250 is all it takes to activate your trading account, with no subscription fees, hidden charges or registration costs. Start small and grow at a pace that feels right for you.',
+    a: 'A minimum deposit of $250 is all it takes to activate your trading account, with no subscription fees, hidden charges or registration costs. Start small and grow at a pace that feels right for you.',
   },
   {
     q: 'How Secure Are My Money and Data on Ai Nobiloption?',
@@ -299,11 +299,11 @@ export const capabilities = [
   { k: 'Trading Instruments', v: 'Equities, Forex, Crypto & More' },
   { k: 'Account Setup', v: 'Simple and Fast Onboarding' },
   { k: 'Customer Support', v: '24/7 Professional Assistance' },
-  { k: 'Minimum Deposit', v: 'AU$250 · No Hidden Costs' },
+  { k: 'Minimum Deposit', v: '$250 · No Hidden Costs' },
 ]
 
 export const footer = {
-  blurb: 'Ai Nobiloption is an AI-driven automated trading platform for users in Australia, bringing automated strategies, live market insight and dependable security together in one place.',
+  blurb: 'Ai Nobiloption is an AI-driven automated trading platform for users worldwide, bringing automated strategies, live market insight and dependable security together in one place.',
   company: [
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '/about' },
