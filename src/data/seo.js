@@ -189,18 +189,18 @@ export const seo = {
     ],
   },
 
-  'ai-nobiloption-review-australia-scam': {
-    title: 'Ai Nobiloption Review Australia: Scam or Legit? (2026)',
+  'ai-nobiloption-review': {
+    title: 'Ai Nobiloption Review: Scam or Legit? (2026)',
     description:
-      'Ai Nobiloption review Australia, is it a scam or legit? Features, benefits, how to get started, plus a straight answer for Australian traders.',
+      'Ai Nobiloption review, is it a scam or legit? Features, benefits, how to get started, plus a straight answer for traders worldwide.',
     keywords: 'Ai Nobiloption review, is Ai Nobiloption legit, Ai Nobiloption scam, Ai Nobiloption Australia, automated trading platform review Australia',
-    canonical: `${SITE}/ai-nobiloption-review-australia-scam`,
+    canonical: `${SITE}/ai-nobiloption-review`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'article',
-    ogImageAlt: 'Ai Nobiloption review Australia, is it a scam or legit?',
+    ogImageAlt: 'Ai Nobiloption review, is it a scam or legit?',
     schema: [
-      webPage('Ai Nobiloption Review Australia: Scam or Legit?', `${SITE}/ai-nobiloption-review-australia-scam`, 'A straight Ai Nobiloption review for Australian traders, features, benefits, getting started, and whether the platform is a scam or legit.'),
-      breadcrumb('Ai Nobiloption Review', '/ai-nobiloption-review-australia-scam'),
+      webPage('Ai Nobiloption Review: Scam or Legit?', `${SITE}/ai-nobiloption-review`, 'A straight Ai Nobiloption review for traders worldwide, features, benefits, getting started, and whether the platform is a scam or legit.'),
+      breadcrumb('Ai Nobiloption Review', '/ai-nobiloption-review'),
     ],
   },
 

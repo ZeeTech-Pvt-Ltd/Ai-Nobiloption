@@ -1,4 +1,4 @@
-// Blog review page: "Ai Nobiloption Review Australia, Scam or Legit?"
+// Blog review page: "Ai Nobiloption Review, Scam or Legit?"
 // Rebuilt as an on-site article from the company's own review post, so the
 // search intent behind that URL ("is it a scam?") is answered on the official
 // domain instead of sending readers elsewhere. External "create account" links
@@ -13,12 +13,12 @@ export default function BlogArticle() {
       <section className="blog-hero">
         <div className="container blog-hero-inner reveal">
           <h1 className="h1">
-            Ai Nobiloption Review Australia, <mark>Scam or Legit?</mark>
+            Ai Nobiloption Review, <mark>Scam or Legit?</mark>
           </h1>
           <p className="lead">
             A detailed look at Ai Nobiloption's features, benefits and sign-up
             process, plus a straight answer on whether the platform is a scam or a
-            legitimate way to trade Australia's markets.
+            legitimate way to trade global markets.
           </p>
           <div className="blog-meta">
             <span>Published: 26 August 2026</span>
@@ -45,7 +45,7 @@ export default function BlogArticle() {
             </p>
             <div className="blog-note">
               <b>The short answer:</b> No, Ai Nobiloption is not a scam. It is an
-              AI-driven automated trading platform used by traders across Australia,
+              AI-driven automated trading platform used by traders worldwide,
               with 95% of client funds held in cold storage, two-factor
               authentication and transparent, real-time account records. The genuine
               Ai Nobiloption lives only at the official domain:{' '}
@@ -157,14 +157,6 @@ export default function BlogArticle() {
                 people.
               </li>
             </ul>
-          </div>
-
-          {/* First CTA */}
-          <div className="blog-cta reveal">
-            <h3>Ready to put the platform to work?</h3>
-            <p>Join traders across Australia and let the AI scan the markets for you, around the clock.</p>
-            <a className="btn btn-primary" href={REGISTER_URL}>Create Your Trading Account Now</a>
-            <a className="btn-link" href={REGISTER_URL}>Read More, Click Here</a>
           </div>
 
           {/* Benefits (numbered, 9) */}

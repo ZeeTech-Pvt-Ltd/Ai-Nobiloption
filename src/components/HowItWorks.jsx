@@ -14,7 +14,7 @@ export default function HowItWorks({ asPage = false }) {
         <div className="section-head reveal">
           <Heading className="h2">Get Started in <mark>3 Easy Steps</mark></Heading>
           {asPage ? (
-            <p className="lead">A clear, guided path from sign-up to your first trade, built for traders across Australia, with no jargon, no complications, and nothing extra to figure out.</p>
+            <p className="lead">A clear, guided path from sign-up to your first trade, built for traders worldwide, with no jargon, no complications, and nothing extra to figure out.</p>
           ) : (
             <p className="lead">A clear, guided path from sign-up to your first trade, with no jargon, no complications, and nothing extra to figure out.</p>
           )}

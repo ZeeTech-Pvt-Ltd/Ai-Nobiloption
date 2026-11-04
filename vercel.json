@@ -1,6 +1,19 @@
 {
   "redirects": [
-    { "source": "/How-It-Works", "destination": "/how-it-works", "permanent": true },
-    { "source": "/disclosure", "destination": "/risk-disclosure", "permanent": true }
+    {
+      "source": "/How-It-Works",
+      "destination": "/how-it-works",
+      "permanent": true
+    },
+    {
+      "source": "/disclosure",
+      "destination": "/risk-disclosure",
+      "permanent": true
+    },
+    {
+      "source": "/ai-nobiloption-review-australia-scam",
+      "destination": "/ai-nobiloption-review",
+      "permanent": true
+    }
   ]
 }

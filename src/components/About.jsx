@@ -102,7 +102,7 @@ export default function About() {
             </h1>
             <p className="lead">
               Ai Nobiloption studies the market around the clock and turns what it finds into clear, actionable
-              opportunities. Our goal is simple, give every trader across Australia the tools to invest with
+              opportunities. Our goal is simple, give every trader worldwide the tools to invest with
               confidence and full transparency.
             </p>
             <div className="about-cta">
