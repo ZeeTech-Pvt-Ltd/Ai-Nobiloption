@@ -129,11 +129,11 @@ function fullFaqSchema() {
 }
 
 const homeDescription =
-  'Ai Nobiloption, AI-powered automated trading for Australia. 24/7 automated strategies, live signals, bank-grade security. Start with just $250.'
+  'Ai Nobiloption, AI-powered automated trading for users worldwide. 24/7 automated strategies, live signals, bank-grade security. Start with just $250.'
 
 export const seo = {
   home: {
-    title: 'Ai Nobiloption, AI-Powered Automated Trading Platform in Australia',
+    title: 'Ai Nobiloption, AI-Powered Automated Trading Platform',
     description: homeDescription,
     keywords:
       'Ai Nobiloption, automated trading platform australia, AI trading platform, automated crypto trading, AI trading Australia',
@@ -141,7 +141,7 @@ export const seo = {
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'website',
     ogImageAlt: 'Ai Nobiloption, AI-powered automated trading platform for Australia',
-    schema: [organization, website, webPage('Ai Nobiloption, AI-Powered Automated Trading Platform in Australia', `${SITE}/`, homeDescription), faqPageSchema(), serviceSchema()],
+    schema: [organization, website, webPage('Ai Nobiloption, AI-Powered Automated Trading Platform', `${SITE}/`, homeDescription), faqPageSchema(), serviceSchema()],
   },
 
   about: {

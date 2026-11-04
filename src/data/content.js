@@ -203,7 +203,7 @@ export const portfolio = {
   title: 'Manage Your ',
   titleMark: 'Portfolio with Data-Driven',
   titleEnd: ' Trading',
-  lead: 'On the Ai Nobiloption platform, traders in Australia get a clean, data-first experience with live performance tracking and tools that are refreshingly easy to understand and use.',
+  lead: 'On the Ai Nobiloption platform, traders enjoy a clean, data-first experience with live performance tracking and tools that are refreshingly easy to understand and use.',
   checks: [
     'Live performance analytics',
     'Clear guidance at every step',
@@ -267,7 +267,7 @@ export const faqPage = [
 export const faq = [
   {
     q: 'Is Ai Nobiloption Legit?',
-    a: 'Yes. Ai Nobiloption is an AI-driven automated trading platform with a community score of 4.8 out of 5 based on 1,247 independent reviews. Every trade, signal and performance figure is shown in real time, and traders across Australia use the platform daily for fast execution.',
+    a: 'Yes. Ai Nobiloption is an AI-driven automated trading platform with a community score of 4.8 out of 5 based on 1,247 independent reviews. Every trade, signal and performance figure is shown in real time, and traders Worldwide use the platform daily for fast execution.',
   },
   {
     q: 'How Much Do I Need to Start Trading on Ai Nobiloption?',
