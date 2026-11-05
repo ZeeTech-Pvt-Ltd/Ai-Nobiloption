@@ -184,7 +184,7 @@ export const seo = {
   },
 
   'ai-nobiloption-review': {
-    title: 'Ai Nobiloption Review: Scam or Legit? (2026)',
+    title: 'Ai Nobiloption Review: Scam or Legit? (2027)',
     description:
       'Ai Nobiloption review, is it a scam or legit? Features, benefits, how to get started, plus a straight answer for traders worldwide.',
     keywords: 'Ai Nobiloption review, is Ai Nobiloption legit, Ai Nobiloption scam, automated trading platform review',
