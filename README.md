@@ -1,8 +1,7 @@
 # Ai Nobiloption
 
-Marketing site for Ai Nobiloption, an AI automated trading platform aimed at
-Australia. Next.js App Router with static export, plain CSS, no component
-library.
+Marketing site for Ai Nobiloption, an AI automated trading platform. Next.js
+App Router with static export, plain CSS, no component library.
 
 ## Running it
 

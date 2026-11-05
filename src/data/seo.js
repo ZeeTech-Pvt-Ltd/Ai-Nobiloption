@@ -20,16 +20,10 @@ const organization = {
   url: SITE,
   logo: `${SITE}/favicon.svg`,
   description:
-    'Ai Nobiloption is an AI-powered automated trading platform for users in Australia, automated strategies, live market signals, and dependable security in one place.',
+    'Ai Nobiloption is an AI-powered automated trading platform for users worldwide, automated strategies, live market signals, and dependable security in one place.',
   email: 'support@ai-nobiloption.com',
   inLanguage: 'en-AU',
-  areaServed: 'Australia',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Melbourne',
-    addressRegion: 'Victoria',
-    addressCountry: 'AU',
-  },
+  areaServed: 'Worldwide',
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
@@ -39,9 +33,9 @@ const organization = {
   },
 }
 
-// The platform described as a schema.org Service, geo-scoped to Australia.
-// all fields reflect claims already on the site (Melbourne base, 24/7
-// support, $250 minimum deposit), nothing invented.
+// The platform described as a schema.org Service, offered worldwide.
+// All fields reflect claims already on the site (24/7 support, $250
+// minimum deposit), nothing invented.
 function serviceSchema() {
   return {
     '@context': 'https://schema.org',
@@ -50,10 +44,10 @@ function serviceSchema() {
     name: 'Ai Nobiloption Automated Trading Platform',
     serviceType: 'Automated trading platform',
     description:
-      'AI-powered automated trading platform for users in Australia, automated strategies, live market signals, and dependable security in one place.',
+      'AI-powered automated trading platform for users worldwide, automated strategies, live market signals, and dependable security in one place.',
     provider: { '@id': `${SITE}/#organization` },
-    areaServed: 'Australia',
-    audience: { '@type': 'Audience', audienceType: 'Traders in Australia' },
+    areaServed: 'Worldwide',
+    audience: { '@type': 'Audience', audienceType: 'Traders worldwide' },
     offers: {
       '@type': 'Offer',
       description: 'Minimum deposit to activate a trading account',
@@ -136,11 +130,11 @@ export const seo = {
     title: 'Ai Nobiloption, AI-Powered Automated Trading Platform',
     description: homeDescription,
     keywords:
-      'Ai Nobiloption, automated trading platform australia, AI trading platform, automated crypto trading, AI trading Australia',
+      'Ai Nobiloption, automated trading platform, AI trading platform, automated crypto trading, AI trading',
     canonical: `${SITE}/`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'website',
-    ogImageAlt: 'Ai Nobiloption, AI-powered automated trading platform for Australia',
+    ogImageAlt: 'Ai Nobiloption, AI-powered automated trading platform worldwide',
     schema: [organization, website, webPage('Ai Nobiloption, AI-Powered Automated Trading Platform', `${SITE}/`, homeDescription), faqPageSchema(), serviceSchema()],
   },
 
@@ -148,7 +142,7 @@ export const seo = {
     title: 'About Ai Nobiloption, Automated Trading Without the Complexity',
     description:
       'Learn about Ai Nobiloption, the AI trading platform trusted by 4M+ users, with automated analysis, bank-grade security, and 24/7 support.',
-    keywords: 'about Ai Nobiloption, Ai Nobiloption trading platform, automated trading platform australia, AI trading company',
+    keywords: 'about Ai Nobiloption, Ai Nobiloption trading platform, automated trading platform, AI trading company',
     canonical: `${SITE}/about`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'website',
@@ -160,14 +154,14 @@ export const seo = {
   },
 
   contact: {
-    title: 'Contact Ai Nobiloption, 24/7 Support for Australian Traders',
+    title: 'Contact Ai Nobiloption, 24/7 Support for Global Traders',
     description:
       'Questions about Ai Nobiloption or automated trading? Contact our 24/7 team by email or the registration form, replies usually within a few hours.',
-    keywords: 'contact Ai Nobiloption, Ai Nobiloption support, automated trading help, automated trading Australia support',
+    keywords: 'contact Ai Nobiloption, Ai Nobiloption support, automated trading help, automated trading support',
     canonical: `${SITE}/contact`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'website',
-    ogImageAlt: 'Contact Ai Nobiloption support, 24/7 assistance for Australian traders',
+    ogImageAlt: 'Contact Ai Nobiloption support, 24/7 assistance for traders worldwide',
     schema: [
       webPage('Contact Ai Nobiloption', `${SITE}/contact`, 'Contact the Ai Nobiloption support team, email and registration form, available around the clock.'),
       breadcrumb('Contact Us', '/contact'),
@@ -193,7 +187,7 @@ export const seo = {
     title: 'Ai Nobiloption Review: Scam or Legit? (2026)',
     description:
       'Ai Nobiloption review, is it a scam or legit? Features, benefits, how to get started, plus a straight answer for traders worldwide.',
-    keywords: 'Ai Nobiloption review, is Ai Nobiloption legit, Ai Nobiloption scam, Ai Nobiloption Australia, automated trading platform review Australia',
+    keywords: 'Ai Nobiloption review, is Ai Nobiloption legit, Ai Nobiloption scam, automated trading platform review',
     canonical: `${SITE}/ai-nobiloption-review`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
     type: 'article',

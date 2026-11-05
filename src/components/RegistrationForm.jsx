@@ -15,7 +15,7 @@ import { parsePhoneInput, toE164, validatePhone } from '../lib/phone.js'
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 
-// Australia is the site's target market, so the flag starts there and is only
+// The flag starts on AU as a neutral default and is only
 // re-pointed once that baseline has been on screen for a beat.
 const MIN_AU_VISIBLE_MS = 1600
 

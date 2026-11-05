@@ -1,7 +1,7 @@
 // Phone-number helpers shared by the signup and contact forms.
 import { countries } from '../data/countries.js'
 
-/** Dial code for an ISO country, e.g. "61" for Australia. */
+/** Dial code for an ISO country, e.g. "61" for AU. */
 export function dialCodeOf(iso) {
   const entry = countries.find(([c]) => c === iso)
   return entry ? String(entry[2]) : '61'

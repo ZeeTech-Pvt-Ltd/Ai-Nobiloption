@@ -4,7 +4,7 @@
 // lookup - so no visitor IP leaves the page and the Privacy Policy's "no
 // third-party requests" claim stays true.
 //
-// Australia is the site's target market, so it is the default. The switch to
+// The AU entry stays as the default dial code; the switch to
 // the visitor's own country is delayed slightly so the AU baseline is actually
 // seen first, and it never fires once the visitor has started typing.
 
