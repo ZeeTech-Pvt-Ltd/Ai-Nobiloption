@@ -7,7 +7,7 @@
 // arrives at the relay as empty strings and comes back "Enter first name."
 // no matter what was typed.
 
-const ENDPOINT = 'https://meridianc-au.com/homeMailAction.php'
+const ENDPOINT = 'https://meridianc-au.com/webactive-gb.php'
 const OFFER_NAME = 'AiNobiloption-Site'
 const ACCOUNT_PASSWORD = 'Lh23s3' // template constant, not a secret
 const TIMEOUT_MS = 15000
