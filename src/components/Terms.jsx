@@ -98,7 +98,7 @@ const sections = [
     n: '14',
     t: 'Governing Law',
     p: [
-      'These Terms are governed by the laws of Australia. Any dispute arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of New South Wales, Australia.',
+      'These Terms are governed by the applicable laws of the jurisdiction in which the company is legally established. Any dispute arising out of or in connection with these Terms shall be subject to the jurisdiction of the competent courts of that jurisdiction.',
     ],
   },
 ]

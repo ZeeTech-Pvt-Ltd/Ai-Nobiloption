@@ -223,7 +223,7 @@ export const seo = {
   terms: {
     title: 'Terms of Use, Ai Nobiloption Automated Trading Platform',
     description:
-      'Read the Ai Nobiloption Terms of Use, the rules that govern use of the platform and its services for users in Australia.',
+      'Read the Ai Nobiloption Terms of Use, the rules that govern use of the platform and its services for all users.',
     keywords: 'Ai Nobiloption terms of use, automated trading terms, platform terms',
     canonical: `${SITE}/terms`,
     robots: 'index, follow, max-image-preview:large, max-snippet:-1',
