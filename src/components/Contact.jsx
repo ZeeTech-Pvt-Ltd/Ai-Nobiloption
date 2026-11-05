@@ -7,7 +7,6 @@ import { Icon } from './icons.jsx'
 const info = [
   { icon: 'mail', title: 'Email', value: 'support@ai-nobiloption.com', hint: 'Replies within a few hours' },
   { icon: 'clock', title: 'Support Hours', value: '24/7, 365 days a year', hint: 'Round-the-clock assistance' },
-  { icon: 'pin', title: 'Location', value: 'Melbourne, Victoria, Australia', hint: 'Serving traders across Australia' },
   { icon: 'zap', title: 'Response Time', value: 'Most questions answered within a few hours', hint: 'Fast, helpful support' },
 ]
 
