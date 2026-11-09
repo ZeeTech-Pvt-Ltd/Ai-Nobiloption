@@ -547,6 +547,26 @@ body.menu-open { overflow: hidden; }
 .feat-card h3 { font-size: 18px; margin-bottom: 8px; }
 .feat-card p { color: var(--muted); font-size: 14.5px; }
 
+/* ---------- Markets ---------- */
+.markets { background: var(--primary-lightest); }
+.markets-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.market-card {
+  background: #141414; border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: 26px 24px; box-shadow: var(--shadow-sm);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.market-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(200, 240, 0, .28); }
+.market-ico {
+  width: 46px; height: 46px; border-radius: 13px; margin-bottom: 16px;
+  background: var(--primary-lighter); color: var(--primary);
+  display: grid; place-items: center;
+}
+.market-card h3 { font-size: 17px; margin-bottom: 6px; }
+.market-card p { color: var(--muted); font-size: 14.5px; line-height: 1.6; }
+
+@media (max-width: 1024px) { .markets-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .markets-grid { grid-template-columns: 1fr; } }
+
 /* ---------- CTA banner ---------- */
 .cta-banner {
   position: relative; overflow: hidden; border-radius: var(--r-lg);

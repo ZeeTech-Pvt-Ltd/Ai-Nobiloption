@@ -6,6 +6,7 @@ import Experience from '@/components/Experience.jsx'
 import Priorities from '@/components/Priorities.jsx'
 import Features from '@/components/Features.jsx'
 import Precision from '@/components/Precision.jsx'
+import Markets from '@/components/Markets.jsx'
 import CtaBanner from '@/components/CtaBanner.jsx'
 import Testimonials from '@/components/Testimonials.jsx'
 import Portfolio from '@/components/Portfolio.jsx'
@@ -27,6 +28,7 @@ export default function HomePage() {
       <Priorities />
       <Features />
       <Precision />
+      <Markets />
 
       <CtaBanner
         title="Built for Every Trader"

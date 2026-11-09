@@ -107,6 +107,34 @@ export function Icon({ name, size = 26, className = '' }) {
           <circle cx="12" cy="11.5" r="2.6" />
         </svg>
       )
+    case 'coin':
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="8.5" />
+          <path d="M12 7.5v9M9.5 10.2c0-1.1 1.1-1.9 2.5-1.9s2.5.8 2.5 1.9-1.1 1.6-2.5 1.8-2.5.7-2.5 1.8 1.1 1.9 2.5 1.9 2.5-.8 2.5-1.9" />
+        </svg>
+      )
+    case 'globe':
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="8.5" />
+          <path d="M3.5 12h17M12 3.5c2.2 2.4 3.3 5.4 3.3 8.5s-1.1 6.1-3.3 8.5c-2.2-2.4-3.3-5.4-3.3-8.5s1.1-6.1 3.3-8.5Z" />
+        </svg>
+      )
+    case 'building':
+      return (
+        <svg {...common}>
+          <path d="M4 20.5h16M6 20.5V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v15.5M14 9h3a1 1 0 0 1 1 1v10.5" />
+          <path d="M8.5 8h3M8.5 11.5h3M8.5 15h3" />
+        </svg>
+      )
+    case 'commodity':
+      return (
+        <svg {...common}>
+          <path d="m12 3.5 7 4v9l-7 4-7-4v-9l7-4Z" />
+          <path d="M5 7.5 12 11l7-3.5M12 11v9.5" />
+        </svg>
+      )
     default:
       return null
   }
