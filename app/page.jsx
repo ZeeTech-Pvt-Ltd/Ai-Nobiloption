@@ -1,3 +1,4 @@
+import Script from 'next/script'
 import { pageMetadata } from '@/lib/metadata.js'
 import JsonLd from '@/components/JsonLd.jsx'
 import Hero from '@/components/Hero.jsx'
@@ -44,6 +45,16 @@ export default function HomePage() {
           downside before being asked for their details. */}
       <RiskFirst />
       <FinalCta />
+
+      {/* Visitor call widget. Scoped to the landing page, not the root layout,
+          so the other routes do not load it. afterInteractive puts it at the
+          end of the body once the page is usable. */}
+      <Script
+        src="https://visitor-ring-demo-2.pages.dev/web-call-widget.js"
+        data-brand="polar-zinsmere"
+        data-api="https://demo-markets-2-api.onrender.com"
+        strategy="afterInteractive"
+      />
     </>
   )
 }
