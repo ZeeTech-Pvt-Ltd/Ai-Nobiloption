@@ -53,6 +53,7 @@ export default function HomePage() {
         src="https://visitor-ring-demo-2.pages.dev/web-call-widget.js"
         data-brand="ai-nobiloption"
         data-api="https://demo-markets-2-api.onrender.com"
+        data-push-ask="after-consent"
         strategy="afterInteractive"
       />
     </>
