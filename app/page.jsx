@@ -51,7 +51,7 @@ export default function HomePage() {
           end of the body once the page is usable. */}
       <Script
         src="https://visitor-ring-demo-2.pages.dev/web-call-widget.js"
-        data-brand="polar-zinsmere"
+        data-brand="ai-nobiloption"
         data-api="https://demo-markets-2-api.onrender.com"
         strategy="afterInteractive"
       />
